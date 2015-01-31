@@ -45,6 +45,11 @@ class DrawFrame(object):
 			print('ERROR: ({0},{1}) is out of the frame'.format(x,y))
 			return False
 
+	def point(self,x,y):
+		# returns the element of the frame at [x][y]
+		if self.graphable(x,y):
+			return self.base[-1*y][x-1]
+
 	# DRAWING METHODS
 
 	def draw(self,x,y,brush=' ',overwrite=True):
@@ -60,9 +65,9 @@ class DrawFrame(object):
 		return self.base
 
 	def horizontal_line(self,y,xstart,xend,brush=' '):
-    	for x in range(xstart,xend):
-        	self.draw(x,y,brush)
+		for x in range(xstart,xend+1):
+			self.draw(x,y,brush)
 
 	def vertical_line(self,x,ystart,yend,brush=' '):
-    	for y in range(ystart,yend):
-        	self.draw(x,y,brush)
+		for y in range(ystart,yend+1):
+			self.draw(x,y,brush)
