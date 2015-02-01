@@ -124,7 +124,7 @@ class DrawFrame(object):
 			for i in line:
 				self.draw(x,y,i,overwrite)
 				x += 1
-
+			
 			y -= 1
 
 	def text(self,xstart,ystart,string,wrap=True,wrapmax=78,draw=True):
@@ -132,14 +132,13 @@ class DrawFrame(object):
 		text = []
 		if wrap:
 			if len(string) < wrapmax:
-				# sorry
 				text = [string]
 			else:
 				while len(string) > wrapmax:
 					text.append(string[0:wrapmax-1])
 					string = string[wrapmax:]
+				text.append(string)
 		else:
-			# sorry again
 			text = [string]
 		# optional argument to have the text returned to the caller 
 		if draw:
