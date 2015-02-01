@@ -126,3 +126,23 @@ class DrawFrame(object):
 				x += 1
 
 			y -= 1
+
+	def text(self,xstart,ystart,string,wrap=True,wrapmax=78,draw=True):
+		string.rstrip('\n')
+		text = []
+		if wrap:
+			if len(string) < wrapmax:
+				# sorry
+				text = [string]
+			else:
+				while len(string) > wrapmax:
+					text.append(string[0:wrapmax-1])
+					string = string[wrapmax:]
+		else:
+			# sorry again
+			text = [string]
+		# optional argument to have the text returned to the caller 
+		if draw:
+			self.write(xstart,ystart,text)
+		else:
+			return text
