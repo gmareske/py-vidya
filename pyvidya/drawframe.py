@@ -113,3 +113,16 @@ class DrawFrame(object):
 		if fill:
 			for x in range(xstart+1,xstart+width):
 				self.vertical_line(x,ystart,tl,brush)
+
+	def write(self,xstart,ystart,arr,overwrite=True):
+		# write() takes a multidimensional array, arr, as an input
+		# and places it at the coordinates xstart,ystart
+		# xstart and ystart specifiy the top left corner of the array
+		y = ystart
+		for line in arr:
+			x = xstart
+			for i in line:
+				self.draw(x,y,i,overwrite)
+				x += 1
+
+			y -= 1
