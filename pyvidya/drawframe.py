@@ -100,3 +100,16 @@ class DrawFrame(object):
 				y += sy
 
 		self.draw(x,y)
+
+	def box(self,xstart,ystart,height,width,brush=' ',fill=False):
+		# bl is bottom left corner of box
+		# tl is top left corner of box
+		bl = xstart + width - 1
+		tl = ystart + height - 1
+		self.horizontal_line(ystart, xstart, bl, brush)
+		self.vertical_line(xstart, ystart, tl, brush)
+		self.horizontal_line(tl, xstart, bl, brush)
+		self.vertical_line(bl, ystart, tl, brush)
+		if fill:
+			for x in range(xstart+1,xstart+width):
+				self.vertical_line(x,ystart,tl,brush)
