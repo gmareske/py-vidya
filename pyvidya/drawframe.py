@@ -12,14 +12,10 @@ class DrawFrame(object):
 
 	newline = ''
 
-	def __init__(self,name,delay,pre_delay=0,height=24,width=80):
-		self.name = name
-		self.delay = delay
-		self.pre_delay = pre_delay
+	def __init__(self,height,width):
+		# the actual two-dimensional array
 		self.height = height
 		self.width = width
-
-		# the actual two-dimensional array
 		self.base = self.blankframe(height,width)
 
 	# UTILITY METHODS
