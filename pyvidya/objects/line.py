@@ -1,6 +1,6 @@
-from .baseframeobject import *
+from baseobject import BaseObject
 
-class LineObject(BaseFrameObject):
+class Line(BaseObject):
 
     name = 'Line'
 

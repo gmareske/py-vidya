@@ -1,8 +1,8 @@
-
-
-from .baseobject import BaseObject
+from baseobject import BaseObject
 
 class List(BaseObject):
+
+    name = 'List'
 
     def __init__(self,heading,x,y,list_items,indent = 4, denote = '-'):
 

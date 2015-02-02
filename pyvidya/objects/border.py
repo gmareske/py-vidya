@@ -1,4 +1,4 @@
-from .baseobject import BaseObject
+from baseobject import BaseObject
 
 class Border(BaseObject):
 

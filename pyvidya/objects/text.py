@@ -1,9 +1,8 @@
-from .baseobject import BaseObject
+from baseobject import BaseObject
 class Text(BaseObject):
 
     name = 'Text'
-    help =     
-        '''
+    help =  '''
         TextObjects are areas of text on the frame.
 
         PARAMETERS:

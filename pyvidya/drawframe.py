@@ -12,7 +12,7 @@ class DrawFrame(object):
 
 	newline = ''
 
-	def __init__(self,height,width):
+	def __init__(self,height=24,width=80):
 		# the actual two-dimensional array
 		self.height = height
 		self.width = width
