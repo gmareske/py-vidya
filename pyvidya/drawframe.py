@@ -1,5 +1,6 @@
 # Python base class for Frame, DrawFrame
 # contains all of the methods used for drawing on a two-dimensional array
+import copy
 
 class DrawFrame(object):
 
@@ -45,6 +46,9 @@ class DrawFrame(object):
 		# returns the element of the frame at [x][y]
 		if self.graphable(x,y):
 			return self.base[-1*y][x-1]
+
+	def copy(self):
+		return copy.deepcopy(self)
 
 	# DRAWING METHODS
 
