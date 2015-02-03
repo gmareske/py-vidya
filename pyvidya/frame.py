@@ -29,7 +29,7 @@ class Frame(object):
 	def run(self):
 		self.base.display()
 		time.sleep(self.pre_delay)
-		if len(self.anims):
+		if len(self.anims) > 0:
 			for a in self.anims:
 				a.run(self.base)
 
