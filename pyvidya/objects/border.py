@@ -5,7 +5,7 @@ class Border(BaseObject):
 	name = 'Border'
 	x = 1
 	y = 1
-	height = 24
+	height = 23
 	width = 80
 
 	help = '''
