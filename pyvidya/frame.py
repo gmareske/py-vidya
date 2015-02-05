@@ -8,7 +8,7 @@ import os
 
 class Frame(object):
 
-	def __init__(self,name,delay,pre_delay=0,height=24,width=80):
+	def __init__(self,name,delay,pre_delay=0,height=23,width=80):
 		self.delay = delay
 		self.pre_delay = pre_delay
 		self.height = height
@@ -35,3 +35,23 @@ class Frame(object):
 
 		self.render()
 		time.sleep(self.delay)
+
+	def add_object(self,obj):
+		self.objects.append(obj)
+		self.render()
+
+	def add_anim(self,anim):
+		self.anims.append(anim)
+
+	def list_objects(self):
+		print('Objects on frame {}'.format(self.name))
+		num = 1
+		for o in self.objects:
+			print('{0}: {1} at ({2}, {3})'.format(num,o.name,o.x,o.y))
+			num += 1
+
+	def list_anims(self):
+		print('Animations on frame {}'.format(self.name))
+		num = 1
+		for a in self.anims:
+			print('{0}: {1}'.format(num,a.name))
