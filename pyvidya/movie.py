@@ -17,3 +17,7 @@ class Movie(object):
 
 	def get_frame(self,num):
 		return self.frames[num]
+
+	def play(self):
+		for frame in self.frames:
+			frame.run()
